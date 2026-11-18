@@ -16,10 +16,14 @@ A ready-to-deploy static corporate website for Alcanza Global. Built in **plain 
 
 ## IMPORTANT — do these 4 things before going live
 
-1. **Configure your business contacts:** Edit `assets/js/config.js` and enter `businessEmail` and `whatsappNumber`.
-2. **Enable actual form delivery:** Create and verify a form at [Formspree](https://formspree.io/) and paste its endpoint into `formspreeEndpoint` in `assets/js/config.js`. Without an endpoint, the form opens the visitor's email app **only if** `businessEmail` is set; it does **not** send anything automatically. Without either, it displays a clear setup message and offers copy-to-clipboard.
+1. **Configure your business contacts:** Edit `assets/js/config.js`. `businessEmail`, the department emails, `businessPhone` and `whatsappNumber` are already filled in. Add `companyAddress`, `legalName`, `registrationNumber`, `foundedYear` and `linkedinUrl` when approved — related footer/About blocks stay hidden until set.
+2. **Enable actual form delivery:** Create and verify a form at [Formspree](https://formspree.io/) and paste its endpoint into `formspreeEndpoint` in `assets/js/config.js`. Without an endpoint, the form opens the visitor's email app addressed to `businessEmail`; it does **not** send anything automatically. Without a configured email, it displays a clear setup message.
 3. **Confirm business content:** Verify all product origins, specifications, availability, approved services, legal information and company registration details. Do not publish third-party supplier photos or certifications without permission.
 4. **Approve brand visuals:** The logo, colours and original product illustrations are launch concepts, not supplier product photos. Replace illustrations with approved real commodity photos when available.
+
+### Optional trust blocks
+
+The credentials strip, team cards, case studies and LinkedIn link are driven by `certifications`, `team`, `caseStudies` and `linkedinUrl` in `assets/js/config.js`. They are hidden until you add real, approved data. Do not invent registration numbers or certificates.
 
 ## Deploy on GitHub Pages (no build)
 
