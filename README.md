@@ -64,6 +64,25 @@ README.md
 
 Each page is ordinary HTML. Change the text in `products/<product>.html` and in the card on `products.html` or `index.html` as needed. Product vector art resides in `assets/images/<product>.svg`.
 
+## SEO setup
+
+The site ships with a technical SEO baseline for `https://alcanzaglobalexim.com`:
+
+- Canonical URLs, Open Graph and Twitter card meta on every page.
+- `Organization`, `WebSite`, `WebPage`, `BreadcrumbList`, `FAQPage`, `Product` and `CollectionPage` JSON-LD structured data.
+- `sitemap.xml` and a `robots.txt` that points to it.
+- A branded `404.html` so missing URLs stay useful.
+- Font connection preconnect hints for faster rendering.
+
+When adding a new page:
+
+1. Add the HTML file with a unique `<title>` and `<meta name="description">`.
+2. Add a `link rel="canonical"` pointing to its final `https://alcanzaglobalexim.com/...` URL.
+3. Add it to `sitemap.xml`.
+4. If it is a product, reuse the existing product page pattern, including `Product` JSON-LD.
+
+Search ranking also depends on factors outside this repository: verified Search Console/Bing Webmaster presence, genuinely useful content targeting buyer queries, and credible external links/mentions. No static file change can guarantee a #1 position.
+
 ## Important limitations of a truly static site
 
 The original PRD described a CMS, admin enquiry dashboard, automatic customer acknowledgements and stored enquiry records. **Those features cannot work in plain static hosting without external services or a backend.** This version intentionally does not pretend to offer them. Formspree can supply form delivery and a basic submission dashboard if you configure it. For a full CMS or CRM, integrate a service in a later phase.
