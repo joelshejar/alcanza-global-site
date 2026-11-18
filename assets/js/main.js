@@ -74,6 +74,15 @@
     $$('[data-whatsapp]').forEach(el => el.remove());
   }
 
+  // Sticky quote button on small screens
+  if (window.matchMedia('(max-width: 600px)').matches && !$('.mobile-quote-bar')) {
+    const quoteHref = $('.nav-cta')?.getAttribute('href') || 'quote.html';
+    const bar = document.createElement('div');
+    bar.className = 'mobile-quote-bar';
+    bar.innerHTML = `<a class="btn btn-gold" href="${quoteHref}">Request a Quote</a>`;
+    document.body.appendChild(bar);
+  }
+
   // Company / legal / social details
   $$('.js-company-address').forEach(el => {
     if (config.companyAddress) el.textContent = config.companyAddress;
